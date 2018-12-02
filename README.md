@@ -15,3 +15,7 @@ Foi feito um teste de task runner, por não ter algo especifico para minimizar o
 
 Link para o repositorio do git url: https://github.com/victorsouzamarques/marvel-teste
 
+#Codigo comentado
+
+O codigo foi inteiramente comentado para deixar mais facil de entender cada funcionalidade e cada teste feito
+

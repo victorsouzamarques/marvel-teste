@@ -1,8 +1,7 @@
 module.exports = function(grunt) {
-  //grunt wrapper function 
   grunt.initConfig({
       pkg: grunt.file.readJSON('package.json'),
-        //grunt task configuration will go here     
+        //aqui começa a configuração do gruntfile, existem inumeras funcionalidades que podemos utilizar no grunt, que ajudam a otimizar o programa
         ngAnnotate: {
           options: {
               singleQuotes: true
@@ -15,6 +14,7 @@ module.exports = function(grunt) {
               }
           }
       },
+      //concat serve para concatenar os arquivos do projeto, no caso js, é muito bom utilizar em uma pai node.js
       concat: {
         js: { //target
             src: ['./public/min-safe/app.js', './public/min-safe/js/*.js'],
@@ -28,11 +28,11 @@ module.exports = function(grunt) {
   }
   });
   
-     //load grunt tasks
+     //aqui eu dou load nas tasks do grunt
      grunt.loadNpmTasks('grunt-contrib-concat');
      grunt.loadNpmTasks('grunt-contrib-uglify');
      grunt.loadNpmTasks('grunt-ng-annotate'); 
  
-     //register grunt default task
+     //aqui eu chamo as tasks defaults do programa
      grunt.registerTask('default', ['ngAnnotate', 'concat', 'uglify']);
 }
