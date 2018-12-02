@@ -9,6 +9,7 @@ export class HeroService {
 
   constructor( public http: HttpClient) { }
 
+  //Essa função retorna 100 personagens da api, que é o limite que a api permite, para utilizar essa alimentação da api, eu preciso passar o ts, priv key e public key em hash md5, assim utilizando um module de encripty hash md5
   loadHero(){
     let ts = new Date().getTime().toString();
     let hash = Md5.hashStr(ts + PRIV_KEY + PUBLIC_KEY);

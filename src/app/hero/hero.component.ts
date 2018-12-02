@@ -27,27 +27,33 @@ export class HeroComponent implements OnInit {
     help: string;
 
     ngOnInit() {
+      //aqui eu inicio o alert para avisar o usuario sobre qual personagem é, com a dica, na função clue
       setTimeout(() => this.staticAlertClosed = true, 20000);
 
       this._success.subscribe((message) => this.successMessage = message);
       this._success.pipe(
         debounceTime(5000)
       ).subscribe(() => this.successMessage = null);
+
+      //inicio o loading da pagina
       this.loading = true;
+      //chamo a função para carregar os personagens
       this.utils.loadImageHero();
+
       setTimeout(()=>{    //<<<---    using ()=> syntax
         this.loading = false;
-   }, 3000);
+      }, 3000);
     }    
 
+    //aqui eu fiz uma função que chamo no html, para atualizar toda vez o nome do personagem
     returnNameHero(){
       return this.nameHero = localStorage.getItem('nameHero');      
     }
-
+    //aqui eu fiz uma função que chamo ho html, para atualizar toda vez a imagem do personagem
     returnImageHero(){
       return this.imageHero = localStorage.getItem('imageHero');
     }
-
+    //aqui eu faço o alert de dica para o usuario de qual personagem é, aparecento no canto direito superior da tela
     helpAnswer(){
       this._success.next(`The character's name is - ${this.returnNameHero()}`);
       this.help = 'true';

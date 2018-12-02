@@ -18,8 +18,10 @@ export class FormAnswerComponent implements OnInit {
   public formAnswer: FormGroup;
   points: number = 0;
   reply: any;
+  //utilização dos modulos do @angular/core input e output, para passar variaveis para outro component
   @Input() pointsRecive;
   @Output() pointsSend = new EventEmitter();
+
   constructor(private formBuilder: FormBuilder, private utils: UtilsService) {}
   public loading = false;
 
@@ -32,12 +34,13 @@ export class FormAnswerComponent implements OnInit {
     ).subscribe(() => this.successMessage = null);
     
    
-
+    //utilização do formbuilder, para criação do formulario e também validação de campos, não permitindo que o usuario envie uma resposta sem ter preenchido pelo menos um digito do campo de reply
     this.formAnswer = this.formBuilder.group({
       reply: ['', Validators.required]
     });
   }
 
+  //aqui é a função que faz a logica de pontos após resposta, separei em todas as possibilidades de um usuario digitar algo, com resposta para cada situação e não permitindo ele ficar com pontos negativos
   answerQuestion(){
     
     this.loading = true;
@@ -52,7 +55,7 @@ export class FormAnswerComponent implements OnInit {
       } else {
         this.successMessage = "Shame on you!";
       }
-    } else {
+      } else {
       if((localStorage.getItem('nameHero') == this.formAnswer.value.reply) && (localStorage.getItem('help') == "false")){
         this.points = this.points + 1;
         this.successMessage = "Nice! You deserved this point.";
@@ -75,12 +78,14 @@ export class FormAnswerComponent implements OnInit {
     this.clearInput();
   }
 
+  //função para limpar os campos do formulario, para cada resposta
   clearInput(){
     this.formAnswer = this.formBuilder.group({
       reply: ['', Validators.required]
     });
   }
-
+  
+  //como nem todos personagens tem imagem, foi implementado a função de next, para pular os personagens que não possuem imagem
   next(){
     this.loading = true;
     

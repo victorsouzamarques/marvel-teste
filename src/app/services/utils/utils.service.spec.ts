@@ -15,7 +15,7 @@ describe('UtilsService', () => {
     });
   });
   
-  //Start test image not be null
+  //Start test image not be null, aqui eu verifico se ah alguma possibilidade de a imagem retornar null, garantindo que sempre havera um personagem sendo retornado
   beforeEach(() => {
     service = TestBed.get(UtilsService);
     image = null;

@@ -17,7 +17,7 @@ describe('HeroService', () => {
     service = TestBed.get(HeroService);
   });
 
-
+  //aqui eu gartanto que a função loadhero do heroservice não ira retornar null, caso ao contrario dara erro, caso mude o teste para .toBe(mull) retornara erro
   it('#getHeros should return a observable', () => {
     expect(service.loadHero()).not.toBe(null);
   });

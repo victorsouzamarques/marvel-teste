@@ -14,11 +14,11 @@ export class AppComponent {
   ngOnInit() {
     
   }
-
+  // função que armazena os pontos que o usuario ganhou ou perdeu, usando @Output() e @Input() como ferramenta.
   recivePoints(recivePoints){
     this.points = recivePoints.points;
   }
-
+  // ja aqui ao inves de pegar um parametro de outro component por @Output e @Input eu utilizei o LocalStorage para mostrar outra tecnologia do angular.
   changeHeroApp(){
     console.log(JSON.parse(localStorage.getItem('heroes')));
   }
