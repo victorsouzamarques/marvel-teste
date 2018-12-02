@@ -20,6 +20,6 @@ export class AppComponent {
   }
   // ja aqui ao inves de pegar um parametro de outro component por @Output e @Input eu utilizei o LocalStorage para mostrar outra tecnologia do angular.
   changeHeroApp(){
-    console.log(JSON.parse(localStorage.getItem('heroes')));
+    this.heroList = JSON.parse(localStorage.getItem('heroes'));
   }
 }

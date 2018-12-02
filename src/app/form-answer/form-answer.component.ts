@@ -46,7 +46,6 @@ export class FormAnswerComponent implements OnInit {
     this.loading = true;
 
     if(this.points < 1){
-      console.log("entrou");
       if((localStorage.getItem('nameHero') == this.formAnswer.value.reply) && (localStorage.getItem('help') == "false")){
         this.points = this.points + 1;
         this.successMessage = "Nice! You deserved this point.";

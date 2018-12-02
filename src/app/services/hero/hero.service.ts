@@ -18,7 +18,6 @@ export class HeroService {
     let url = `https://gateway.marvel.com:443/v1/public`;
 
     let fullUrl = `${url}${path}${authorization}`;
-    console.log(fullUrl);
     return this.http.get<any>(fullUrl);
   } 
 }
