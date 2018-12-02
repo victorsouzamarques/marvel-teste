@@ -1,0 +1,10 @@
+<section class="hero-content">
+  <div class="image-hero">
+    <img class="hero-image" src="{{returnImageHero()}}" alt="Image Hero">
+  </div>
+  <div class="button-alert-block">
+    <button class="button-clue" (click)="this.helpAnswer()"> <b>I give up,</b> who is it?</button>
+    <ngb-alert class="alert-clue" *ngIf="successMessage" type="Sucess" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
+  </div>
+</section>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>

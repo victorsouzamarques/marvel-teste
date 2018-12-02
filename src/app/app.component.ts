@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'teste';
+  title = 'app';
+  points: number;
+  heroList: any = [];
+  constructor() {}
+  
+  ngOnInit() {
+    
+  }
+
+  recivePoints(recivePoints){
+    this.points = recivePoints.points;
+  }
+
+  changeHeroApp(){
+    console.log(JSON.parse(localStorage.getItem('heroes')));
+  }
 }

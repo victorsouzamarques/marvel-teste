@@ -1,0 +1,19 @@
+<section>
+  <div class="block-form">
+    <form [formGroup]="formAnswer">
+      <div class="form-answer-group">
+        <div class="form-group">
+          <input id="input-reply" type="text"  placeholder="Reply" formControlName="reply" required>
+        </div>
+        <div class="button-answer-next-block">
+          <button class="button-answer-next" title="salvar" [disabled]="!formAnswer.valid" (click)="answerQuestion()">Answer</button>
+          <button class="button-answer-next" title="next" (click)="next()">Next</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="alert-block">
+    <ngb-alert class="alert-message" *ngIf="successMessage" type="danger" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
+  </div>
+</section>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>
