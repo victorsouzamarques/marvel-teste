@@ -19,3 +19,6 @@ Link para o repositorio do git url: https://github.com/victorsouzamarques/marvel
 
 O codigo foi inteiramente comentado para deixar mais facil de entender cada funcionalidade e cada teste feito
 
+#Docker
+
+Utilização do docker no projeto também foi implementado.
