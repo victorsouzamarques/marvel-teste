@@ -1,5 +1,10 @@
-<h1>Marvelous Quiz</h1>
-<p>Points: {{points}}</p>
-<app-hero class="component-inline"></app-hero>
-<app-form-answer class="component-inline" [pointsRecive]="points" (pointsSend)="recivePoints($event)"></app-form-answer>
-<span class="ShareWhatsApp"><a href="whatsapp://send?text=Pontuacao feita foi {{points}}" target="_blank">Compartilhe no whatsapp sua pontuação</a></span>
+<section class="content">
+    <h1 id="title-app">Marvelous Quiz</h1>
+    <p id="score-p">Score: {{points}}</p>
+    <app-hero class="component-inline"></app-hero>
+    <app-form-answer class="component-inline" [pointsRecive]="points" (pointsSend)="recivePoints($event)"></app-form-answer>
+    <div class="block-share">
+        <a class="ShareWhatsApp" href="whatsapp://send?text=Pontuacao feita foi {{points}}" target="_blank">Share Result</a>
+    </div>
+</section>
+ 
